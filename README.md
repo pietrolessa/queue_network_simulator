@@ -1,34 +1,50 @@
 # Simulador de Rede de Filas - T1
 
-Arquivo principal: `QueueSimulator.java`
+Trabalho da disciplina **Simulação e Métodos Analíticos**  
+**UA2 | Fundamentos de Simulação por Computador**  
+**M8 | Desenvolvimento de Simulador para Rede de Filas**
 
-## Como compilar
+## Descrição
+
+Este projeto implementa um **simulador de rede de filas** em Java, baseado nos pseudocódigos e conceitos apresentados nos módulos do Moodle.
+
+O simulador foi desenvolvido para suportar:
+
+- leitura de um modelo de rede de filas a partir de um arquivo `.yml`
+- tratamento de eventos de:
+  - `CHEGADA`
+  - `SAIDA`
+  - `PASSAGEM`
+- roteamento probabilístico entre filas
+- filas com diferentes quantidades de servidores
+- filas com capacidade finita ou infinita
+- critério de parada por quantidade de números aleatórios utilizados
+
+O modelo validado para a T1 está no arquivo:
+
+- `t1_model_seed1.yml`
+
+---
+
+## Estrutura do projeto
+
+Arquivo principal:
+
+- `QueueSimulator.java`
+
+Arquivo de entrada utilizado para validação da T1:
+
+- `t1_model_seed1.yml`
+
+---
+
+## Requisitos
+
+- Java JDK instalado
+- terminal com acesso aos comandos `java` e `javac`
+
+Para conferir:
 
 ```bash
-javac QueueSimulator.java
-```
-
-## Como executar
-
-```bash
-java QueueSimulator t1_model_seed1.yml t1_report_java.txt
-```
-
-ou, sem salvar em arquivo:
-
-```bash
-java QueueSimulator t1_model_seed1.yml
-```
-
-## Observações
-
-- O código segue a base dos pseudocódigos do Moodle:
-  - `NextRandom()`
-  - `AcumulaTempo(ev)`
-  - `CHEGADA(ev)`
-  - `SAIDA(ev)`
-  - `PASSAGEM(ev)`
-- Usa `ArrayList<Fila>` para a rede.
-- Usa `PriorityQueue<Evento>` como escalonador.
-- Lê o mesmo formato de `.yml` mostrado no exemplo do simulador em Java.
-- Para a T1, o modelo validado está no arquivo `t1_model_seed1.yml`.
+java -version
+javac -version
